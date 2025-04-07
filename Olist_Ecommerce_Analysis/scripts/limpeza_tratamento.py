@@ -159,3 +159,36 @@ for col in num_cols:
 # Verificando se os dados nulos foram tratados.
 print(products.isnull().sum())
 """ Os dados foram tratados."""
+
+# ANALISANDO O DATASET "SELLERS".
+
+pd.set_option("display.max_columns", None)
+print(sellers.head())
+
+# Verificando a existência de dados nulos.
+print(sellers.isnull().sum())
+"""O dataset não possui dados nulos."""
+
+# Verificando o tipo de dados de cada coluna.
+print(sellers.dtypes)
+""" Os tipos de dados estão corretos."""
+
+# ANALISANDO O DATASET "PAYMENTS".
+
+pd.set_option("display.max_columns", None)
+print(payments.head())
+
+# Analisando a presença de dados nulos.
+print(sellers.isnull().sum())
+""" O dataset não possui dados nulos. """
+
+# Analisando os tipos de dados de cada coluna.
+print(payments.dtypes)
+
+# Alterando o tipo de dados da coluna payment_type para categoria.
+print(payments["payment_type"].unique())
+payments["payment_type"] = payments["payment_type"].astype("category")
+
+# Verificando se o tipo da coluna foi alterado.
+print(payments["payment_type"].dtypes)
+""" O tipo de dado foi alterado. """
