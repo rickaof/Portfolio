@@ -192,3 +192,16 @@ payments["payment_type"] = payments["payment_type"].astype("category")
 # Verificando se o tipo da coluna foi alterado.
 print(payments["payment_type"].dtypes)
 """ O tipo de dado foi alterado. """
+
+# ANALISANDO O DATASET "GEOLOCATION".
+
+pd.set_option("display.max_columns", None)
+print(geolocation.head())
+
+# Verificando a existencia de dados nulos.
+print(geolocation.isnull().sum())
+""" O dataset não possui dados nulos. """
+
+# Verificando se os tipos de dados estão corretos.
+print(geolocation.dtypes)
+""" Os tipos de dados estão corretos. """
