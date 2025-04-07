@@ -113,3 +113,16 @@ order_items["shipping_limit_date"] = pd.to_datetime(
 
 # Verificando se o tipo de dado foi alterado.
 print(order_items.dtypes)
+
+# ANALISANDO O DATASET "CUSTOMERS".
+
+pd.set_option("display.max_columns", None)
+print(customers.head())
+
+# Verificando a existência de dados nulos.
+print(customers.isnull().sum())
+""" Não existem dados nulos."""
+
+# Verificando o tipo de dados de cada coluna.
+print(customers.dtypes)
+""" Os tipos de dados estão corretos."""
