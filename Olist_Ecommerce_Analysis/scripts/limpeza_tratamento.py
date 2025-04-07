@@ -262,3 +262,57 @@ print(orders.sort_values(by="order_purchase_timestamp", ascending=False).head(10
 """ Todos os últimos 10 pedidos foram cancelados, indicando que houve algum grave problema
 nos últimos meses, ainda não é possível identificar a razão e o motivo dos
 cancelamentos e da queda tão acentuada no número de pedidos. """
+
+# Analisando o tempo de entrega dos pedidos.
+
+# Criando coluna de tempo de entrega em dias.
+orders["delivery_time"] = (
+    orders["order_delivered_customer_date"] - orders["order_purchase_timestamp"]).dt.days
+
+# Análise do tempo de entrega.
+print(orders["delivery_time"].describe())
+
+plt.figure(figsize=(8, 5))
+sns.histplot(orders["delivery_time"].dropna(), bins=20, kde=True, color="blue")
+plt.title("Distribuição do Tempo de Entrega")
+plt.xlabel("Dias")
+plt.ylabel("frequência")
+plt.show()
+
+""" O gráfico indica que o tempo de entrega se concentra entre 10 e 20 dias, é importante
+analisar se o tempo médio de entrega aumentou nos últimos meses, podendo ser uma
+possível razão para a queda acentuada de pedidos nos últimos meses. """
+
+# Analisando o tempo médio de entrega ao longo dos meses.
+
+# Criando uma nova coluna com o mês de compra
+orders["order_purchase_month"] = orders["order_purchase_timestamp"].dt.to_period(
+    "M")
+
+# Calculando o tempo médio de entrega por mês
+monthly_delivery_time = orders.groupby("order_purchase_month")[
+    "delivery_time"].mean()
+
+# Plotando o gráfico
+plt.figure(figsize=(12, 5))
+plt.plot(monthly_delivery_time.index.astype(
+    str), monthly_delivery_time.values, marker='o', linestyle="-", color="purple")
+plt.xticks(rotation=45)
+plt.title("Tempo Médio de Entrega ao Longo dos Meses")
+plt.xlabel("Mês")
+plt.ylabel("Tempo Médio de Entrega (dias)")
+plt.grid(True)
+plt.show()
+
+""" O tempo médio de entregas era alto no início, mas abaixou consideravelmente a partir
+do 3 mês. O tempo médio teve baixa oscilação ao longo dos meses posteriores, com uma ligeira
+queda nos últimos 3 meses. Portanto, não se pode atribuir a queda no número de pedidos ao
+tempo de entrega dos produtos. """
+
+# Verificando a proporção de cancelamentos ao longo dos meses.
+orders.groupby("order_purchase_month")["order_status"].value_counts(
+    normalize=True).unstack()["canceled"].plot(kind="line", figsize=(12, 5))
+plt.title("Proporção de Pedidos Cancelados por Mês")
+plt.xlabel("Mês")
+plt.ylabel("Cancelamentos (%)")
+plt.show()
