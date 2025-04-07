@@ -67,7 +67,7 @@ mantidos como estão, pois o tipo da coluna será alterado para datetime e os va
 nulos serão NaT (Not a time). Isso mantém a coerência dos dados e evita problemas
 com operações envolvendo datas."""
 
-# Verificando os tipo de dados.
+# Verificando o tipo dos dados.
 print(orders.dtypes)
 
 # Convertendo conlunas de data para datetime
@@ -89,5 +89,27 @@ orders["customer_id"] = orders["customer_id"].astype(str)
 # Convertendo a coluna "order status" para o tipo categoria.
 orders["order_status"] = orders["order_status"].astype("category")
 
-# Verificando se os dados nulos foram tratados e os tipos das variáveis corrigido.
+# Verificando se os tipos das variáveis corrigido.
 print(orders.dtypes)
+
+# ANALISANDO O DATASET "ORDERS_ITEMS."
+
+pd.set_option("display.max_columns", None)
+print(order_items.head())
+
+# Verificando a existência de dados nulos.
+print(order_items.isnull().sum())
+""" Não existem dados nulos."""
+
+# Verificando o tipo dos dados.
+print(order_items.dtypes)
+""" O tipo de dado encontrado que não condiz com o tipo de dado correto
+da coluna, é o Shipping_limit_date, portanto essa coluna será convertida
+do tipo objeto para datetime."""
+
+# Convertendo a coluna shipping_limit_date para datetime.
+order_items["shipping_limit_date"] = pd.to_datetime(
+    order_items["shipping_limit_date"], errors="coerce")
+
+# Verificando se o tipo de dado foi alterado.
+print(order_items.dtypes)
