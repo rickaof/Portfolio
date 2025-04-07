@@ -137,10 +137,10 @@ print(products.isnull().sum())
 """ Foram encontrados dados nulos no nome da categoria do produto,
 o que será preenchido por "Desconhecido". Dados nulos também foram
 encontrados nas colunas: comprimento do nome do produto, comprimento
-da descrição e quantidade de fotos, os dados serão preenchidos com a 
+da descrição e quantidade de fotos, os dados serão preenchidos com a
 mediana para evitar distorções causadas por valores extremos. Por fim,
 fora encontrados dois dados nulos na colunas: peso, comprimento, altura
-e largura, todos os dados também serão preenchidos com a mediana. 
+e largura, todos os dados também serão preenchidos com a mediana.
 """
 # Verificando o tipo de dados de cada coluna.
 print(products.dtypes)
@@ -205,3 +205,60 @@ print(geolocation.isnull().sum())
 # Verificando se os tipos de dados estão corretos.
 print(geolocation.dtypes)
 """ Os tipos de dados estão corretos. """
+
+# ANALISE EXPLORATÓRIA DOS DADOS COM VISUALIZAÇÕES.
+
+# Contagem de pedidos por status.
+plt.figure(figsize=(10, 5))
+ax = sns.countplot(data=orders, x="order_status", order=orders[
+    "order_status"].value_counts().index, palette="pastel")
+plt.xticks(rotation=45)
+plt.yscale("log")
+plt.title("Distribuição dos Status dos Pedidos")
+plt.xlabel("Status do pedido")
+plt.ylabel("Quantidade")
+for p in ax.patches:
+    ax.annotate(
+        f"{int(p.get_height())}",
+        (p.get_x() + p.get_width() / 2, p.get_height()),
+        ha="center",
+        va="bottom",
+        fontsize=10,
+        color="black"
+    )
+plt.show()
+""" A grande maioria dos pedidos foram entregues, indicando que o sistema de
+entrega dos pedidos está funcionando bem. """
+
+# Análise dos pedidos ao longo do tempo.
+
+orders["order_purchase_month"] = orders["order_purchase_timestamp"].dt.to_period(
+    "M")
+monthly_orders = orders.groupby("order_purchase_month")["order_id"].count()
+plt.figure(figsize=(12, 6))
+plt.plot(monthly_orders.index.astype(
+    str), monthly_orders.values, marker='o', linestyle="-", color="royalblue")
+plt.title("Evolução dos pedidos ao Longo do tempo")
+plt.xlabel("Mês")
+plt.ylabel("Quantidade de Pedidos")
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.show()
+
+""" Os pedidos tiveram uma tendência de crescimento entre dezembro de 2016 até 
+novembro de 2017, seguido de um perído de estabilização entre dezembro de 2017 até
+agosto de 2018. Contudo, houve uma queda acentuada do número de pedidos de Agosto a 
+Outubro, por isso é preciso checar se existem dados referente aos últimos meses
+ou se os dados simplesmente acabaram."""
+
+# Verificando se existem informações de pedidos nos últimos meses.
+print(monthly_orders.tail(12))  # Últimos 12 meses disponíveis
+""" Houveram pedidos nos últimos meses."""
+
+# Verificando os últimos 10 pedidos.
+pd.set_option("display.max_columns", None)
+print(orders.sort_values(by="order_purchase_timestamp", ascending=False).head(10))
+
+""" Todos os últimos 10 pedidos foram cancelados, indicando que houve algum grave problema
+nos últimos meses, ainda não é possível identificar a razão e o motivo dos
+cancelamentos e da queda tão acentuada no número de pedidos. """
