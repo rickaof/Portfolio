@@ -179,7 +179,7 @@ pd.set_option("display.max_columns", None)
 print(payments.head())
 
 # Analisando a presença de dados nulos.
-print(sellers.isnull().sum())
+print(payments.isnull().sum())
 """ O dataset não possui dados nulos. """
 
 # Analisando os tipos de dados de cada coluna.
@@ -316,3 +316,7 @@ plt.title("Proporção de Pedidos Cancelados por Mês")
 plt.xlabel("Mês")
 plt.ylabel("Cancelamentos (%)")
 plt.show()
+
+""" O gráfico indicou que a proporção de pedidos cancelados aumentaram cerca de 90% 
+nos últimos meses. É necessário, portanto, aprofundar com consultas em SQL para 
+insights mais detalhados."""
