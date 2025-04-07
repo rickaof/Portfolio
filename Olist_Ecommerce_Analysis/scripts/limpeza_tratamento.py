@@ -126,3 +126,36 @@ print(customers.isnull().sum())
 # Verificando o tipo de dados de cada coluna.
 print(customers.dtypes)
 """ Os tipos de dados estão corretos."""
+
+# ANALISANDO O DATASET "PRODUCTS".
+
+pd.set_option("display.max_columns", None)
+print(products.head())
+
+# Verificando a existência de dados nulos.
+print(products.isnull().sum())
+""" Foram encontrados dados nulos no nome da categoria do produto,
+o que será preenchido por "Desconhecido". Dados nulos também foram
+encontrados nas colunas: comprimento do nome do produto, comprimento
+da descrição e quantidade de fotos, os dados serão preenchidos com a 
+mediana para evitar distorções causadas por valores extremos. Por fim,
+fora encontrados dois dados nulos na colunas: peso, comprimento, altura
+e largura, todos os dados também serão preenchidos com a mediana. 
+"""
+# Verificando o tipo de dados de cada coluna.
+print(products.dtypes)
+""" Os tipos de dados estão corretos."""
+
+# Tratando os dados nulos.
+products["product_category_name"].fillna("Desconhecido", inplace=True)
+num_cols = [
+    "product_name_lenght", "product_description_lenght",
+    "product_photos_qty", "product_weight_g", "product_length_cm",
+    "product_height_cm", "product_width_cm"
+]
+for col in num_cols:
+    products[col].fillna(products[col].median(), inplace=True)
+
+# Verificando se os dados nulos foram tratados.
+print(products.isnull().sum())
+""" Os dados foram tratados."""
