@@ -1,3 +1,5 @@
+from sqlalchemy import create_engine
+import pyodbc
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -320,3 +322,40 @@ plt.show()
 """ O gráfico indicou que a proporção de pedidos cancelados aumentaram cerca de 90% 
 nos últimos meses. É necessário, portanto, aprofundar com consultas em SQL para 
 insights mais detalhados."""
+
+# Enviando os arquivos pro SQL server.
+
+orders["order_purchase_month"] = orders["order_purchase_month"].astype(str)
+
+# Configuração da conexão
+server = "NOME_DO_SERVIDOR"  # Exemplo: "localhost\SQLEXPRESS" ou "192.168.1.100"
+database = "NOME_DO_BANCO"    # Exemplo: "OlistDB"
+username = "SEU_USUARIO"      # Se usar autenticação do Windows, pode não precisar
+password = "SUA_SENHA"        # Se houver senha, coloque aqui
+
+# Criar a conexão usando SQLAlchemy
+engine = create_engine(
+    f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver=ODBC+Driver+17+for+SQL+Server")
+
+# Lista de tabelas tratadas para enviar ao SQL
+datasets = {
+    "orders": orders,
+    "order_items": order_items,
+    "customers": customers,
+    "products": products,
+    "sellers": sellers,
+    "payments": payments,
+    "geolocation": geolocation
+}
+
+executar_envio = False
+# Alterar "executar_envio para "True" se desejar enviar as tabelas para o SQL server.
+
+if executar_envio:
+    # Enviar os DataFrames para o SQL Server
+    for nome, df in datasets.items():
+        if not df.empty:  # Verifica se o DataFrame não está vazio
+            df.to_sql(nome, con=engine, if_exists="replace", index=False)
+            print(f"✅ {nome} carregado com sucesso no SQL Server!")
+        else:
+            print(f"⚠ Atenção: {nome} está vazio e não será carregado!")
