@@ -328,10 +328,10 @@ insights mais detalhados."""
 orders["order_purchase_month"] = orders["order_purchase_month"].astype(str)
 
 # Configuração da conexão
-server = "NOME_DO_SERVIDOR"  # Exemplo: "localhost\SQLEXPRESS" ou "192.168.1.100"
-database = "NOME_DO_BANCO"    # Exemplo: "OlistDB"
-username = "SEU_USUARIO"      # Se usar autenticação do Windows, pode não precisar
-password = "SUA_SENHA"        # Se houver senha, coloque aqui
+server = "SEU_SERVIDOR"  # Exemplo: "localhost\SQLEXPRESS" ou "192.168.1.100"
+database = "SEU_BANCO"    # Exemplo: "OlistDB"
+username = "SEU_USUARIO"   # Se usar autenticação do Windows, pode não precisar
+password = "SUA_SENHA"       # Se houver senha, coloque aqui
 
 # Criar a conexão usando SQLAlchemy
 engine = create_engine(
@@ -355,7 +355,7 @@ if executar_envio:
     # Enviar os DataFrames para o SQL Server
     for nome, df in datasets.items():
         if not df.empty:  # Verifica se o DataFrame não está vazio
-            df.to_sql(nome, con=engine, if_exists="replace", index=False)
+            df.to_sql(nome, con=engine, if_exists="append", index=False)
             print(f"✅ {nome} carregado com sucesso no SQL Server!")
         else:
             print(f"⚠ Atenção: {nome} está vazio e não será carregado!")
