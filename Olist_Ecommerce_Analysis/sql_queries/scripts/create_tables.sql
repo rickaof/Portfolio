@@ -20,7 +20,7 @@ freight_value FLOAT,
 PRIMARY KEY (order_id, order_item_id)
 );
 
-CREATE TABLE customer (
+CREATE TABLE customers (
 customer_id VARCHAR(50) PRIMARY KEY,
 customer_unique_id VARCHAR(50),
 customer_zip_code_prefix INT,
