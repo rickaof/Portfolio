@@ -3,11 +3,11 @@ import pandas as pd
 import os
 
 # Define path to raw data files
-data_path = "../data/raw"
+current_dir = os.path.dirname(__file__)
+data_path = os.path.abspath(os.path.join(current_dir, "..", "data", "raw"))
 
 # List files in the data directory
 files = os.listdir(data_path)
-print("Files Available", files)
 
 # Create a dictionary where each is a file name and the value is a DataFrame with the data.
 custom_names = {
@@ -27,5 +27,5 @@ dfs = {
 # Display information about each loaded dataset.
 for file, df in dfs.items():
     print(f"\nDataset: {file}")
-    print(df.shape())
+    print(df.shape)
     print(df.head())
