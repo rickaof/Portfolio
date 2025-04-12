@@ -172,3 +172,11 @@ print(geolocation.isnull().sum())
 # Checking column data types
 # Check data_preparation.ipynb notebook for treatment details.
 print(geolocation.dtypes)
+
+# Saving the processed Dataframes in the "../data/processed".
+processed_path = os.path.abspath(
+    os.path.join(current_dir, "..", "data", "processed"))
+
+for file, df in dfs.items():
+    df.to_csv(os.path.join(processed_path, file), index=False)
+    print(f"Processed dataset '{file}' saved to {processed_path}")
