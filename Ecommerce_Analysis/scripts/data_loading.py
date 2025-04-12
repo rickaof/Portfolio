@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 # Define path to raw data files
-data_path = "../data/raw/"
+data_path = "../data/raw"
 
 # List files in the data directory
 files = os.listdir(data_path)
