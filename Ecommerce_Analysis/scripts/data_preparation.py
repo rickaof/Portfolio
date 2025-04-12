@@ -9,7 +9,7 @@ data_path = os.path.abspath(os.path.join(current_dir, "..", "data", "raw"))
 # List files in the data directory
 files = os.listdir(data_path)
 
-# Create a dictionary where each is a file name and the value is a DataFrame with the data.
+# Create a dictionary where each key is a file name and the value is a DataFrame with the data.
 custom_names = {
     "olist_customers_dataset.csv": "customer",
     "olist_geolocation_dataset.csv": "geolocation",
