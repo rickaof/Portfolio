@@ -106,7 +106,7 @@ print(products.head())
 print(products.isnull().sum())
 
 # Null and missing values treatment.
-products["product_category_name"].fillna("Desconhecido", inplace=True)
+products["product_category_name"].fillna("Unknown", inplace=True)
 num_cols = [
     "product_name_lenght", "product_description_lenght",
     "product_photos_qty", "product_weight_g", "product_length_cm",
