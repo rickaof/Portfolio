@@ -178,5 +178,6 @@ processed_path = os.path.abspath(
     os.path.join(current_dir, "..", "data", "processed"))
 
 for file, df in dfs.items():
-    df.to_csv(os.path.join(processed_path, file), index=False)
-    print(f"Processed dataset '{file}' saved to {processed_path}")
+    file_name = f"{file}.csv"
+    df.to_csv(os.path.join(processed_path, file_name), index=False)
+    print(f"Processed dataset '{file_name}' saved to {processed_path}")
