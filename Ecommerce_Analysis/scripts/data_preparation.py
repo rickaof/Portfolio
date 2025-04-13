@@ -25,6 +25,12 @@ dfs = {
     for file in files if file in custom_names
 }
 
+# Display information about each loaded dataset.
+for file, df in dfs.items():
+    print(f"\nDataset: {file}")
+    print(df.shape)
+    print(df.head())
+
 # Orders Dataframe: treatment and Type Conversion
 orders = dfs["orders"]  # Extract the 'orders' DataFrame
 
