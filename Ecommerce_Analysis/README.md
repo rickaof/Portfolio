@@ -19,15 +19,14 @@ This project analyzes and predicts delivery delays using the Olist Brazilian e-c
 
 ## 📁 Project Structure
 Ecommerce_Anlysis/ 
-
--├── notebooks/         # Jupyter notebooks for each stage 
--├── sql/               # SQL queries for database analysis 
--├── images/            # Key charts and visual outputs 
--├── data/              # Dataset download instructions 
--│ ├── processed/       # Final, canonical datasets for modeling 
--│ └── raw/             # Original, immutable data dumps 
--├── dashboard/         # Power BI report (.pbix) 
--└── README.md          # Project description
+├── notebooks/ # Jupyter notebooks for each stage 
+├── sql/ # SQL queries for database analysis 
+├── images/ # Key charts and visual outputs 
+├── data/ # Dataset download instructions 
+│ ├── processed/ # Final, canonical datasets for modeling 
+│ └── raw/ # Original, immutable data dumps 
+├── dashboard/ # Power BI report (.pbix) 
+└── README.md # Project description
 
 ## 📎 Dataset
 
