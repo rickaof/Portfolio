@@ -18,7 +18,8 @@ This project analyzes and predicts delivery delays using the Olist Brazilian e-c
 - Jupyter Notebook  
 
 ## 📁 Project Structure
-olist-delivery-delay-prediction/ │ 
+Ecommerce_Anlysis/ 
+
 ├── notebooks/         # Jupyter notebooks for each stage 
 ├── sql/               # SQL queries for database analysis 
 ├── images/            # Key charts and visual outputs 
