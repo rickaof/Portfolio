@@ -1,61 +1,39 @@
-# Olist_Ecommerce_Analysis
+# Olist Delivery Delay Prediction 🚚📦
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+This project analyzes and predicts delivery delays using the Olist Brazilian e-commerce dataset. It covers the full cycle from data exploration to model building and visualization.
 
-O projeto é sobre dados reais de um marketplace brasileiro, incluindo pedidos, preços, categoria de produtos, avaliações e prazos de entrega. O objetivo é realizar tratamentos dos dados, Análise Exploratória e aplicar um modelo Machine Learning.
+## 🔍 Project Steps
 
-## Project Organization
+- Exploratory Data Analysis with Pandas, Seaborn and Matplotlib  
+- Data preprocessing and feature engineering  
+- Delay prediction using supervised learning (Scikit-learn)  
+- SQL queries for dataset understanding  
+- Interactive dashboards with Power BI  
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         olist_ecommerce_analysis and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── olist_ecommerce_analysis   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes olist_ecommerce_analysis a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
-```
+## 📊 Tools & Technologies
 
---------
+- Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn)  
+- SQL (joins, aggregations, subqueries)  
+- Power BI (KPIs, filters, visual reports)  
+- Jupyter Notebook  
 
+## 📁 Project Structure
+olist-delivery-delay-prediction/ │ 
+├── notebooks/         # Jupyter notebooks for each stage 
+├── sql/               # SQL queries for database analysis 
+├── images/            # Key charts and visual outputs 
+├── data/              # Dataset download instructions 
+│ ├── processed/       # Final, canonical datasets for modeling 
+│ └── raw/             # Original, immutable data dumps 
+├── dashboard/         # Power BI report (.pbix) 
+└── README.md          # Project description
+
+## 📎 Dataset
+
+This dataset is publicly available via [Kaggle – Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and contains real sales data from an e-commerce platform in Brazil.
+
+---
+
+**Author:** Henrique Ferreira  
+**LinkedIn:** [linkedin.com/in/henrique-ferreira-52506a261/)  
+**Email:** [rick.a.o.f@gmail.com]
