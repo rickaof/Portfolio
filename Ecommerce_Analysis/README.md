@@ -28,5 +28,5 @@ This dataset is publicly available via [Kaggle – Olist](https://www.kaggle.com
 ---
 
 **Author:** Henrique Ferreira  
-**LinkedIn:** [linkedin.com/in/henrique-ferreira](https://linkedin.com/in/henrique-ferreira)  
+**LinkedIn:** https://www.linkedin.com/in/henrique-ferreira-52506a261/
 **Email:** rick.a.o.f@gmail.com
