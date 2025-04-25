@@ -43,5 +43,3 @@ If you're interested in collaborating, feel free to connect:
 📧 Email: [rick.a.o.f@gmail.com](mailto:rick.a.o.f@gmail.com)
 
 ---
-
-> “Without data, you're just another person with an opinion.” – W. Edwards Deming
