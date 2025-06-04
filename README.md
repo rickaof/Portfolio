@@ -14,9 +14,7 @@ This portfolio includes a variety of projects that showcase:
 - 🔍 **Exploratory Data Analysis (EDA)**
 - 🧹 **Data Cleaning and Preprocessing**
 - 🧠 **Machine Learning Models**
-- 🗄️ **SQL Queries and Relational Database Analysis**
 - 📊 **Interactive Dashboards in Power BI**
-- 🛠️ **End-to-end Data Pipelines**
 
 ---
 
@@ -25,7 +23,7 @@ This portfolio includes a variety of projects that showcase:
 ### 1. [Ecommerce Delivery Delay Prediction – Olist Dataset](https://github.com/rickaof/Portfolio/tree/main/Ecommerce_Analysis)  
 A complete analysis and machine learning project focused on understanding and predicting delivery delays in a Brazilian e-commerce platform.
 
-**Tech used:** Python (Pandas, Seaborn, Matplotlib, Scikit-learn), SQL, Power BI
+**Tech used:** Python (Pandas, Seaborn, Matplotlib, Scikit-learn)
 
 ---
 
