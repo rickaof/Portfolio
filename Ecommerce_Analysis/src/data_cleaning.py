@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 
 def check_missing_and_duplicates(dfs):
@@ -34,3 +35,51 @@ def products_treatment(products):
     for col in num_cols:
         products[col].fillna(products[col].median(), inplace=True)
     return products
+
+
+def olist_filter_and_save(
+        orders, order_items, payments, customer, products, sellers):
+
+    # Orders purchase count by month
+    order_counts = orders['order_purchase_month'].value_counts()
+    valid_months = order_counts[order_counts >= 500].index
+
+    # Filtering the orders by valid months.
+    orders_filtered = orders[orders['order_purchase_month'].isin(valid_months)]
+
+    # Valid IDs
+    valid_order_ids = orders_filtered['order_id']
+    valid_customer_ids = orders_filtered['customer_id']
+
+    # Filtering other dataframes based on valid data
+    order_items_filtered = order_items[order_items['order_id'].isin(
+        valid_order_ids)]
+    payments_filtered = payments[payments['order_id'].isin(valid_order_ids)]
+    customer_filtered = customer[customer['customer_id'].isin(
+        valid_customer_ids)]
+    products_filtered = products[products['product_id'].isin(
+        order_items_filtered['product_id'])]
+    sellers_filtered = sellers[sellers['seller_id'].isin(
+        order_items_filtered['seller_id'])]
+
+    # Dictionary with filtered DataFrames
+    dfs = {
+        "orders": orders_filtered,
+        "order_items": order_items_filtered,
+        "payments": payments_filtered,
+        "customer": customer_filtered,
+        "products": products_filtered,
+        "sellers": sellers_filtered,
+    }
+
+    # Relative path to save files
+    current_dir = os.getcwd()
+    processed_path = os.path.abspath(os.path.join(
+        current_dir, "..", "data", "processed"))
+
+    # Save DataFrames to CSV files
+    for file_name, df in dfs.items():
+        file_path = os.path.join(processed_path, f"{file_name}.csv")
+        df.to_csv(file_path, index=False)
+
+    return dfs
