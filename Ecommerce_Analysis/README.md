@@ -12,7 +12,7 @@ Delivery delays impact customer satisfaction, logistics efficiency, and operatio
 * Adjust carrier choices or shipment priorities
 * Improve SLA (Service Level Agreement) performance
 
-This project simulates a real-world predictive scenario applicable to marketplaces and fintechs like C6 Bank.
+This project simulates a real-world predictive scenario.
 
 ## Project Files
 
@@ -93,8 +93,8 @@ This project showcases a complete end-to-end workflow: data ingestion, preproces
 
 \*\*Author:\*\* Henrique Ferreira
 
-\*\*LinkedIn:\*\* \[linkedin.com/in/henrique-ferreira-52506a261]\([https://www.linkedin.com/in/henrique-ferreira-52506a261/](https://www.linkedin.com/in/henrique-ferreira-52506a261/))
+\*\*LinkedIn:\*\* \(https://www.linkedin.com/in/henrique-ferreira-52506a261/)
 
-\*\*Email:\*\* \[[rick.a.o.f@gmail.com](mailto:rick.a.o.f@gmail.com)]\(mailto:[rick.a.o.f@gmail.com](mailto:rick.a.o.f@gmail.com))License
+\*\*Email:\*\* \[rick.a.o.f@gmail.com]
 
 This project is licensed under the MIT License.
