@@ -21,6 +21,21 @@ def merge_datasets(orders_filtered, order_items_filtered, customer_filtered,
     return df_merged
 
 
+def detect_outliers_iqr(series):
+    Q1 = series.quantile(0.25)
+    Q3 = series.quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1-1.5*IQR
+    upper_bound = Q3+1.5*IQR
+    outliers = series[(series < lower_bound) | (series > upper_bound)]
+    print(
+        f"Number of outliers: {outliers.shape[0]}\n"
+        f"Lower bound: {lower_bound:.2f}\n"
+        f"Upper bound: {upper_bound:.2f}"
+    )
+    return outliers
+
+
 def calculate_vif(df_numeric):
     vif_data = pd.DataFrame()
     vif_data["feature"] = df_numeric.columns
@@ -54,7 +69,8 @@ def plot_boxplots_by_delivery(df_merged, df_numeric, target_col='is_late'):
         for idx in stats.index:
             plt.text(idx, df_merged[plot_col].max()*0.9,
                      f"Mean: {stats.loc[idx, 'mean']}\nMedian: {stats.loc[idx, 'median']}",
-                     ha='center', fontsize=9, bbox=dict(facecolor='white', alpha=0.6))
+                     ha='center', fontsize=9, bbox=dict(
+                         facecolor='white', alpha=0.6))
 
         plt.tight_layout()
         plt.show()
