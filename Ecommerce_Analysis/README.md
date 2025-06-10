@@ -27,7 +27,6 @@ Ecommerce_Analysis/
 │   ├── data_cleaning.py    # Cleaning, filtering, saving
 │   ├── exploratory_data_analysis.py  # EDA, outliers, VIF
 │   ├── model.py            # Training, CV, metrics, plots
-├── outputs/                # Visualizations, metrics, SHAP plots
 ├── main.py                 # Master pipeline to execute all steps
 ├── requirements.txt        # Python dependencies
 └── README.md               # Project documentation
