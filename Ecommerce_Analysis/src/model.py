@@ -19,7 +19,7 @@ def train_evaluate_model(model, X, y, scale_data=False):
 
     Outputs:
     - Prints CV mean scores and test scores
-    - Plots confusion matrix for test set
+    - Plots confusion matrix for test seteu 
     """
 
     # Split train/test

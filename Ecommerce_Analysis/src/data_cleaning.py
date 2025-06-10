@@ -41,6 +41,8 @@ def olist_filter_and_save(
         orders, order_items, payments, customer, products, sellers):
 
     # Orders purchase count by month
+    orders["order_purchase_month"] = orders["order_purchase_timestamp"].dt.to_period(
+        "M")
     order_counts = orders['order_purchase_month'].value_counts()
     valid_months = order_counts[order_counts >= 500].index
 
@@ -73,7 +75,7 @@ def olist_filter_and_save(
     }
 
     # Relative path to save files
-    current_dir = os.getcwd()
+    current_dir = os.path.dirname(__file__)
     processed_path = os.path.abspath(os.path.join(
         current_dir, "..", "data", "processed"))
 

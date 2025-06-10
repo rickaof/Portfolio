@@ -13,8 +13,9 @@ def load_olist_datasets(data_folder="data/raw"):
         dict: Dictionary with table names as keys and pandas
         Dataframes as values.
     """
-    current_dir = os.getcwd()
-    data_path = os.path.abspath(os.path.join(current_dir, '..', data_folder))
+    current_dir = os.path.dirname(__file__)
+    data_path = os.path.abspath(os.path.join(
+        current_dir, '..', data_folder))
 
     custom_names = {
         "olist_customers_dataset.csv": "customer",
