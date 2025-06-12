@@ -14,14 +14,61 @@ Delivery delays impact customer satisfaction, logistics efficiency, and operatio
 
 This project simulates a real-world predictive scenario.
 
-## Project Files
+## Project Structure
 
 ```
-├── data_preparation.ipynb   # Data cleaning, feature engineering, and EDA
-├── model.ipynb              # Model training, evaluation, and selection
-├── requirements.txt         # Python package dependencies
-├── README.md                # Project documentation
+Ecommerce_Analysis/
+├── data/
+│   ├── raw/                # Raw Olist data (CSV files)
+│   └── processed/          # Cleaned and filtered data
+├── src/                    # Modular Python scripts
+│   ├── __init__.py         # Declares src as a package
+│   ├── data_loader.py      # Functions to load datasets
+│   ├── data_cleaning.py    # Cleaning, filtering, saving
+│   ├── exploratory_data_analysis.py  # EDA, outliers, VIF
+│   ├── model.py            # Training, CV, metrics, plots
+├── main.py                 # Master pipeline to execute all steps
+├── requirements.txt        # Python dependencies
+└── README.md               # Project documentation
 ```
+
+
+## Workflow Overview
+
+The pipeline is implemented in main.py, which orchestrates the following steps:
+
+* Load raw datasets using src/data_loader.py
+
+* Clean and filter the data with src/data_cleaning.py
+
+* Merge tables and engineer the target (is_late)
+
+* Perform EDA: outlier detection, boxplots, VIF (multicollinearity)
+
+* Train multiple models: Random Forest, Logistic Regression, XGBoost
+
+* Evaluate each model: Cross-validation + Test metrics
+
+## How to Run the Pipeline
+
+1. Ensure you have Python 3.11+ and clone the repo
+
+2. Install the dependencies:
+
+- pip install -r requirements.txt
+
+3. Place the Olist CSV files in data/raw/
+
+4. Run the full pipeline:
+
+- python main.py
+
+You can also run individual functions inside a Jupyter Notebook:
+
+- from src.data_cleaning import order_type_conversion
+- from src.model import train_evaluate_model
+
+(Ensure src/__init__.py exists for package recognition.)
 
 ## Dataset
 
