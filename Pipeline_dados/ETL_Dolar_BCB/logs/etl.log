@@ -1,0 +1,32 @@
+INFO:root:Iniciando ETL de 01/01/2025 até 05/01/2025
+INFO:root:Extração concluída com 2 registros.
+INFO:root:Transformação concluída
+ERROR:root:Pipeline falhou: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+INFO:root:Iniciando ETL de 01/01/2025 até 05/01/2025
+INFO:root:Extração concluída com 2 registros.
+INFO:root:Transformação concluída
+ERROR:root:Pipeline falhou: The DNS query name does not exist: _mongodb._tcp.<mongodb>.mongodb.net.
+INFO:root:Iniciando ETL de 01/01/2025 até 05/01/2025
+INFO:root:Extração concluída com 2 registros.
+INFO:root:Transformação concluída
+ERROR:root:Pipeline falhou: The DNS query name does not exist: _mongodb._tcp.<mongodb>.mongodb.net.
+INFO:root:Iniciando ETL de 01/05/2025 até 05/05/2025
+INFO:root:Extração concluída com 2 registros.
+INFO:root:Transformação concluída
+ERROR:root:Pipeline falhou: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+INFO:root:Iniciando ETL de 01/05/2025 até 05/05/2025
+INFO:root:Extração concluída com 2 registros.
+INFO:root:Transformação concluída
+INFO:root:Dados carregados com sucesso no MongoDB
+INFO:root:Iniciando ETL de 01/01/2025 até 05/01/2025
+INFO:root:Extração concluída com 2 registros.
+INFO:root:Transformação concluída
+ERROR:root:Pipeline falhou: A variável de ambiente MONGODB_URI não está configurada.
+INFO:root:Iniciando ETL de 01/05/2025 até 10/05/2025
+INFO:root:Extração concluída com 6 registros.
+INFO:root:Transformação concluída
+ERROR:root:Pipeline falhou: The DNS query name does not exist: _mongodb._tcp.cluster-pipeline.mongodb.net.
+INFO:root:Iniciando ETL de 01/05/2025 até 10/05/2025
+INFO:root:Extração concluída com 6 registros.
+INFO:root:Transformação concluída
+INFO:root:Dados carregados com sucesso no MongoDB
