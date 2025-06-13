@@ -51,13 +51,13 @@ O pipeline precisa de uma string de conexão com o MongoDB, que deve ser passada
 - **No Windows (PowerShell):**
 
 ```powershell
-$env:MONGODB_URI="mongodb+srv://usuario:senha@cluster.mongodb.net/?retryWrites=true&w=majority"
+$env:MONGODB_URI="insira sua uri"
 ```
 
 - **No Linux/macOS (bash):**
 
 ```bash
-export MONGODB_URI="mongodb+srv://usuario:senha@cluster.mongodb.net/?retryWrites=true&w=majority"
+export MONGODB_URI="insira sua uri"
 ```
 
 Substitua `usuario`, `senha` e `cluster` pela sua configuração do MongoDB Atlas ou sua string de conexão local.
