@@ -1,0 +1,17 @@
+# Ignorar arquivos sensíveis
+.env
+
+# Pycache
+__pycache__/
+*.py[cod]
+
+# Logs
+logs/
+*.log
+
+# VSCode settings
+.vscode/
+
+# Outros arquivos temporários
+.DS_Store
+.env.*
