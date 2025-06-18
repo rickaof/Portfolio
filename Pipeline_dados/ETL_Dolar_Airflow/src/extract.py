@@ -2,10 +2,10 @@ import requests
 from datetime import datetime, timedelta
 
 
-def extract_currency_data(start_date, end_date):
+def extract_currency_data(start_date, end):
     """Extrai os dados de cotação do dólar."""
     start_date = datetime.strptime(start_date, "%m-%d-%Y")
-    end = datetime.strptime(end_date, "%m-%d-%Y")
+    end = datetime.strptime(end, "%m-%d-%Y")
 
     data = []
     current = start_date
@@ -22,4 +22,3 @@ def extract_currency_data(start_date, end_date):
         current += timedelta(days=1)
 
     return data
-

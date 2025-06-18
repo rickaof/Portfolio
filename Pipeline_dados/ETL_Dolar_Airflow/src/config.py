@@ -1,17 +1,17 @@
-import os
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
+try:
+    from airflow.models import Variable
+
+    def get_variable(key, default=None):
+        return Variable.get(key, default_var=default)
+except ImportError:
+    def get_variable(key, default=None):
+        return os.getenv(key, default)
+
 
 def get_mongo_uri():
-    return os.getenv("MONGODB_URI")
-
-
-def get_mongo_db():
-    # Se precisar usar o nome do DB em separado, coloque aqui ou extraia da URI
-    return os.getenv("MONGODB_DATABASE") or "bcb_data"
-
-
-def get_mongo_collection():
-    return os.getenv("MONGODB_COLLECTION") or "cotacoes"
+    return get_variable("MONGODB_URI")

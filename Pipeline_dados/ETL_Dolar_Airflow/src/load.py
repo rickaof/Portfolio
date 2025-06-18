@@ -1,17 +1,12 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from datetime import datetime
-import os
-
-
-def connection():
-    """Retorna a string de conexão com MongoDB."""
-    return os.getenv("MONGODB_URI")
+from config import get_mongo_uri
 
 
 def load_to_mongo(data, db_name="bcb_data", collection_name="cotacoes"):
     """Conecta no MongoDB e retorna a coleção desejada."""
-    uri = connection()
+    uri = get_mongo_uri()
     client = MongoClient(uri, server_api=ServerApi('1'))
     db = client[db_name]
     collection = db[collection_name]
@@ -21,7 +16,7 @@ def load_to_mongo(data, db_name="bcb_data", collection_name="cotacoes"):
 
 
 def log_pipeline_execution(start_date, end, qtd_registros, status="sucesso", mensagem_erro=None):
-    uri = connection()
+    uri = get_mongo_uri()
     client = MongoClient(uri, server_api=ServerApi('1'))
     db = client["bcb_data"]
     log = {
