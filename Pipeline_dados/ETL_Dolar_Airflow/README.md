@@ -30,7 +30,6 @@ Projeto de pipeline de dados que automatiza o processo de extração, transforma
 ETL_Dolar_Airflow/
 ├── dags/                       # DAG principal do Airflow (etl_dolar_bcb.py)
 ├── src/                        # Scripts auxiliares (load_to_mongo.py, config.py, etc)
-├── .env.example                # Modelo de variáveis de ambiente (exemplo)
 ├── .gitignore                  # Arquivos ignorados pelo Git
 ├── Dockerfile                  # Imagem customizada do Airflow com dependências
 ├── docker-compose.yml          # Orquestração do container Airflow
@@ -49,13 +48,6 @@ Crie um arquivo `.env` baseado no modelo `.env.example`.
 ```env
 # Conexão com o MongoDB Atlas
 MONGODB_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/bcb_data?retryWrites=true&w=majority
-
-# Configurações do usuário admin do Airflow
-AIRFLOW_ADMIN_USERNAME=admin
-AIRFLOW_ADMIN_PASSWORD=admin123
-AIRFLOW_ADMIN_FIRSTNAME=Admin
-AIRFLOW_ADMIN_LASTNAME=User
-AIRFLOW_ADMIN_EMAIL=admin@example.com
 ```
 
 > ⚠️ **Importante:** O arquivo `.env` **NÃO deve ser versionado**. Já está incluído no `.gitignore`.
@@ -83,6 +75,7 @@ cd ETL_Dolar_Airflow
 cp .env.example .env
 # edite com suas credenciais do MongoDB e dados do admin Airflow
 ```
+Obs.: O cadastro para utilização do MongoDB pode ser realizada gratuitamente pelo site oficial, após a criação do cluster desejado, a URI com as credencias do MongoDB é fornecida.
 
 ### 4. Subir os containers
 
@@ -98,10 +91,9 @@ Abra no navegador:
 http://localhost:8080
 ```
 
-Login padrão:
+### Acesso ao Airflow
 
-- **Usuário**: definido no `.env`
-- **Senha**: definida no `.env`
+Ao utilizar a imagem `apache/airflow:3.0.2` em modo standalone, o Airflow **gera automaticamente um usuário e senha de acesso**. Essas credenciais são exibidas logo no início da inicialização do container.
 
 ---
 
@@ -129,7 +121,7 @@ python /opt/airflow/scripts/load_to_mongo.py
 
 ```bash
 docker compose up --build    # Sobe os containers
-docker compose down          # Para e remove os containers
+docker compose down -v         # Para e remove os containers
 docker ps                    # Lista containers em execução
 docker logs airflow_etl_standalone  # Ver logs do Airflow
 ```
@@ -140,7 +132,6 @@ docker logs airflow_etl_standalone  # Ver logs do Airflow
 
 - Nunca suba o `.env` no GitHub
 - Use `requirements.txt` para manter suas dependências versionadas
-- Utilize o Airflow para orquestrar, e não apenas como agendador
 - Documente comandos úteis e instruções no `README.md`
 
 ---
@@ -149,16 +140,7 @@ docker logs airflow_etl_standalone  # Ver logs do Airflow
 
 - Como estruturar pipelines com Airflow
 - Como containerizar projetos de dados com Docker
-- Como trabalhar com variáveis sensíveis usando `.env` e `python-dotenv`
-- Como publicar um projeto completo e funcional para portfólio
-
----
-
-## 📌 Próximos passos
-
-- Criar monitoramento com logs detalhados
-- Subir a aplicação para a AWS com ECS ou MWAA
-- Adicionar testes unitários para os scripts
+- Como trabalhar com variáveis sensíveis usando `.env`
 
 ---
 
