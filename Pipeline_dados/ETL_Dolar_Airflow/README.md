@@ -75,9 +75,8 @@ O cadastro para utilização do MongoDB pode ser realizada gratuitamente pelo si
 ### 4. Criar o arquivo `.env`
 
 ```bash
-cp .env.example .env
-# Cole a sua URI obtida através do site do MongoDB Atlas.
-Obs.: Não esqueça inserir a senha criada no local indicado.
+.env
+# MONGODB_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/bcb_data?retryWrites=true&w=majority
 ```
 
 ### 5. Subir os containers
