@@ -68,7 +68,7 @@ MONGODB_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/bcb_data?retry
 git clone https://github.com/seuusuario/ETL_Dolar_Airflow.git
 cd ETL_Dolar_Airflow
 ```
-### 3. Cadatro MongoDB Atlas
+### 3. Cadastro MongoDB Atlas
 
 O cadastro para utilização do MongoDB pode ser realizada gratuitamente pelo site oficial. Após a criação do cluster desejado, a URI com as credencias do MongoDB é fornecida.
 
