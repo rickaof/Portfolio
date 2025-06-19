@@ -15,3 +15,5 @@ logs/
 # Outros arquivos temporários
 .DS_Store
 .env.*
+airflow.db
+webserver_config.py

@@ -1,3 +1,8 @@
+import sys
+import os
+# Adiciona o caminho da pasta ETL_Dolar_Airflow/src ao sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+
 import logging
 from load import load_to_mongo, log_pipeline_execution
 from transform import transform_currency_data
@@ -5,11 +10,6 @@ from extract import extract_currency_data
 from datetime import datetime, timedelta
 from airflow.operators.python import PythonOperator
 from airflow import DAG
-import os
-import sys
-# Adiciona o caminho da pasta ETL_Dolar_Airflow/src ao sys.path
-sys.path.append(os.path.abspath(os.path.join(
-    os.path.dirname(__file__), "..", "src")))
 
 
 logging.basicConfig(filename="logs/etl_dolar.log", level=logging.INFO)

@@ -1,4 +1,2 @@
-requests
-python-dotenv
-pymongo
-apache-airflow==3.0.2
+requests==2.32.3
+pymongo==4.13.2
