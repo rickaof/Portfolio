@@ -12,6 +12,7 @@ logs/
 
 # VSCode settings
 .vscode/
+airflow.cfg
 
 # Outros arquivos temporários
 .DS_Store
