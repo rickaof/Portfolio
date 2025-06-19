@@ -1,6 +1,6 @@
 # Ignorar arquivos sensíveis
 .env
-
+venv
 # Pycache
 __pycache__/
 *.py[cod]
