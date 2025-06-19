@@ -68,22 +68,25 @@ MONGODB_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/bcb_data?retry
 git clone https://github.com/seuusuario/ETL_Dolar_Airflow.git
 cd ETL_Dolar_Airflow
 ```
+### 3. Cadatro MongoDB Atlas
 
-### 3. Criar o arquivo `.env`
+O cadastro para utilização do MongoDB pode ser realizada gratuitamente pelo site oficial. Após a criação do cluster desejado, a URI com as credencias do MongoDB é fornecida.
+
+### 4. Criar o arquivo `.env`
 
 ```bash
 cp .env.example .env
-# edite com suas credenciais do MongoDB e dados do admin Airflow
+# Cole a sua URI obtida através do site do MongoDB Atlas.
+Obs.: Não esqueça inserir a senha criada no local indicado.
 ```
-Obs.: O cadastro para utilização do MongoDB pode ser realizada gratuitamente pelo site oficial, após a criação do cluster desejado, a URI com as credencias do MongoDB é fornecida.
 
-### 4. Subir os containers
+### 5. Subir os containers
 
 ```bash
 docker compose up --build
 ```
 
-### 5. Acessar a interface do Airflow
+### 6. Acessar a interface do Airflow
 
 Abra no navegador:
 
