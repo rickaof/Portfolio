@@ -76,7 +76,7 @@ O cadastro para utilização do MongoDB pode ser realizada gratuitamente pelo si
 
 ```bash
 .env
-# MONGODB_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/bcb_data?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/bcb_data?retryWrites=true&w=majority
 ```
 
 ### 5. Subir os containers
