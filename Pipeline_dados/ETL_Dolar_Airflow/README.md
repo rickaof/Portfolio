@@ -108,17 +108,6 @@ Ao utilizar a imagem `apache/airflow:3.0.2` em modo standalone, o Airflow **gera
 
 ---
 
-## 🧪 Testar manualmente
-
-Dentro do container do Airflow:
-
-```bash
-docker exec -it airflow_etl_standalone bash
-python /opt/airflow/scripts/load_to_mongo.py
-```
-
----
-
 ## 🛠️ Comandos Docker úteis
 
 ```bash
