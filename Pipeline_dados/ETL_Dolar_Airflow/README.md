@@ -75,9 +75,8 @@ O cadastro para utilização do MongoDB pode ser realizada gratuitamente pelo si
 ### 4. Criar o arquivo `.env`
 
 ```bash
-cp .env.example .env
-# Cole a sua URI obtida através do site do MongoDB Atlas.
-Obs.: Não esqueça inserir a senha criada no local indicado.
+.env
+MONGODB_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/bcb_data?retryWrites=true&w=majority
 ```
 
 ### 5. Subir os containers
@@ -106,17 +105,6 @@ Ao utilizar a imagem `apache/airflow:3.0.2` em modo standalone, o Airflow **gera
 2. A cotação do dólar no dia é buscada na API do Banco Central.
 3. Os dados são transformados e armazenados no MongoDB Atlas.
 4. Um log de execução também é armazenado no MongoDB.
-
----
-
-## 🧪 Testar manualmente
-
-Dentro do container do Airflow:
-
-```bash
-docker exec -it airflow_etl_standalone bash
-python /opt/airflow/scripts/load_to_mongo.py
-```
 
 ---
 
