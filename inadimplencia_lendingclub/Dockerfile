@@ -28,21 +28,16 @@ RUN wget -q https://downloads.apache.org/spark/spark-${SPARK_VERSION}/spark-${SP
 ENV SPARK_HOME=/usr/local/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}
 ENV PATH=$PATH:$SPARK_HOME/bin
 
-# 7) Copiar o arquivo requirements.txt (com as libs Python)
-COPY requirements.txt .
-
-# 8) Atualizar pip e instalar as libs do Python necessárias para seu projeto
-RUN pip install --upgrade pip && pip install -r requirements.txt
-
-# 9) Criar diretório para seu código e notebooks
+# 7) Diretorio de trabalho do container
 WORKDIR /app
 
-# 10) Definir volumes para montar código e notebooks do host para o container
-# Isso facilita edição fora do container e execução dentro do container
-VOLUME /app/notebooks
-VOLUME /app/src
+# 8) Copiar o arquivo requirements.txt (com as libs Python)
+COPY requirements.txt .
 
-# 11) Rodar Jupyter Notebook quando o container iniciar
+# 9) Atualizar pip e instalar as libs do Python necessárias para seu projeto
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# 10) Rodar Jupyter Notebook quando o container iniciar
 # --ip=0.0.0.0 permite acesso de fora do container
 # --no-browser evita tentar abrir browser dentro do container
 # --allow-root permite rodar como root (padrão em containers)

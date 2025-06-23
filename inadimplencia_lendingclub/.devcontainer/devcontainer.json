@@ -1,0 +1,19 @@
+{
+  "name": "spark-jupyter-dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "spark-jupyter",
+  "workspaceFolder": "/app",
+  "settings": {
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter",
+    "ms-azuretools.vscode-docker"
+  ],
+  "mounts": [
+    "source=${localWorkspaceFolder}/data,target=/app/data,type=bind,consistency=cached"
+  ],
+  "remoteUser": "root"
+}
