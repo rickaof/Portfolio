@@ -1,4 +1,4 @@
 pyspark==4.0.0
 pandas
 jupyter
-pyarrow==20.0.0
+pyarrow
