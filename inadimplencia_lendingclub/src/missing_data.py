@@ -24,27 +24,27 @@ def missing_report(df):
         dtype = field.dataType
         c = col(col_name)
 
-    # Começa com null como condição base
-    condition = c.isNull()
+        # Começa com null como condição base
+        condition = c.isNull()
 
-    # Se for string, adiciona condições extras
-    if isinstance(dtype, StringType):
-        condition = condition | (trim(c) == "") | lower(
-            trim(c)).isin(missing_strings)
+        # Se for string, adiciona condições extras
+        if isinstance(dtype, StringType):
+            condition = condition | (trim(c) == "") | lower(
+                trim(c)).isin(missing_strings)
 
-    # Se for numérico, adiciona isnan()
-    elif isinstance(dtype, NumericType):
-        condition = condition | isnan(c)
+        # Se for numérico, adiciona isnan()
+        elif isinstance(dtype, NumericType):
+            condition = condition | isnan(c)
 
-    # Conta valores ausentes
-    missing_count = df.filter(condition).count()
-    missing_percent = round((missing_count/total_rows)*100, 2)
+        # Conta valores ausentes
+        missing_count = df.filter(condition).count()
+        missing_percent = round((missing_count/total_rows)*100, 2)
 
-    missing_info.append(Row(
-        column_name=col_name,
-        data_type=dtype.simpleString(),
-        missing_count=missing_count,
-        missing_percent=missing_percent
+        missing_info.append(Row(
+            column_name=col_name,
+            data_type=dtype.simpleString(),
+            missing_count=missing_count,
+            missing_percent=missing_percent
     ))
 
     return spark.createDataFrame(missing_info)
