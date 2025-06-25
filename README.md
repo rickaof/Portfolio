@@ -1,43 +1,66 @@
+# 📁 Henrique Ferreira – Data Science & Analytics Portfolio
 
-# 📁 Henrique Ferreira – Data Portfolio
-
-Welcome to my data science and analytics portfolio! 👋
-
-I'm **Henrique Ferreira**, a Mechanical Engineer transitioning into the world of **Data Analytics**, **Machine Learning**, and **Business Intelligence**. This repository contains projects that demonstrate my technical skills, curiosity, and passion for turning data into actionable insights.
+👋 Welcome! I'm **Henrique Ferreira**, a Mechanical Engineer transitioning into Data Science, Business Intelligence and Machine Learning.  
+This portfolio is a collection of projects that reflect my ability to solve real-world problems with data, applying both analytical thinking and solid engineering practices.
 
 ---
 
-## 📌 What you'll find here
+## 📌 What You'll Find Here
 
-This portfolio includes a variety of projects that showcase:
+A set of end-to-end projects demonstrating:
 
 - 🔍 **Exploratory Data Analysis (EDA)**
-- 🧹 **Data Cleaning and Preprocessing**
-- 🧠 **Machine Learning Models**
-- 📊 **Interactive Dashboards in Power BI**
+- 🧹 **Data Cleaning & Feature Engineering**
+- 🧠 **Machine Learning Models (Classification & Evaluation)**
+- 📦 **ETL Pipelines with Airflow**
+- 🧠 **Model Interpretability (SHAP, Threshold Tuning)**
 
 ---
 
-## 📦 Projects Included
+## 📂 Projects Included
 
-### 1. [Ecommerce Delivery Delay Prediction – Olist Dataset](https://github.com/rickaof/Portfolio/tree/main/Ecommerce_Analysis)  
-A complete analysis and machine learning project focused on understanding and predicting delivery delays in a Brazilian e-commerce platform.
+### 1. 📦 Ecommerce Delivery Delay Prediction – Olist Dataset  
+A complete machine learning project to predict delivery delays in Brazilian e-commerce orders.
 
-**Tech used:** Python (Pandas, Seaborn, Matplotlib, Scikit-learn)
+- ✅ Modular Python pipeline (`src/`, `main.py`)
+- 🔁 Preprocessing, feature engineering, and model comparison (XGBoost, RF, Logistic Regression)
+- 🎯 Focus on **recall** and **business impact**
+- 🧠 Model explainability with **SHAP**
+- 📈 Final model tuned with threshold adjustment and cross-validation
+
+**Tech used:** Python, Pandas, Scikit-learn, XGBoost, SHAP, Seaborn, Matplotlib  
+**[🔗 View Project]https://github.com/rickaof/Portfolio/tree/main/Ecommerce_Analysis**
 
 ---
 
-## 🚀 More coming soon...
+### 2. 🔄 ETL Pipeline – Daily USD Exchange Rate from Banco Central API  
+An automated ETL pipeline that collects, transforms, and stores daily currency exchange rates.
 
-New projects involving classification, regression, time series forecasting, and real-world dashboards are on the way!
+- 🛰️ Extracts data from public **API (Banco Central)**
+- 🧹 Transforms and cleans data (JSON → structured)
+- 💾 Stores in **MongoDB** 
+- 🗓️ Orchestrated via **Apache Airflow** (scheduled DAG)
+
+**Tech used:** Python, Requests, Airflow, MongoDB, Docker
+
+**[🔗 View Project]https://github.com/rickaof/Portfolio/tree/main/Pipeline_dados**
 
 ---
 
-## 📫 About Me
+## 🚀 In Progress
 
-If you're interested in collaborating, feel free to connect:
+- ### 📉 Credit Default Risk – LendingClub Dataset
+
+A real-world dataset from LendingClub to build a data pipeline for detecting and analyzing borrower default risk.
+
+---
+
+## 📬 About Me
+
+If you're hiring or want to collaborate, feel free to connect!
 
 [![LinkedIn](https://img.shields.io/badge/-Henrique%20Ferreira-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/henrique-ferreira-52506a261/)](https://www.linkedin.com/in/henrique-ferreira-52506a261/)  
 📧 Email: [rick.a.o.f@gmail.com](mailto:rick.a.o.f@gmail.com)
 
+Thanks for visiting! ⭐
 ---
