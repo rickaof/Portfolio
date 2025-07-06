@@ -17,6 +17,15 @@ A set of end-to-end projects demonstrating:
 
 ---
 
+## ⚠️ Project Migration Notice
+
+The **Ecommerce Delivery Delay Prediction** project has been **migrated to a dedicated repository** for better organization, history, and maintenance.  
+The original project folder remains here for reference and backward compatibility, but please refer to the new repository for the latest and most complete version:
+
+🔗 [Olist Ecommerce Analysis — New Repository](https://github.com/rickaof/Olist_Ecommerce_Analysis)
+
+---
+
 ## 📂 Projects Included
 
 ### 1. 📦 Ecommerce Delivery Delay Prediction – Olist Dataset  
@@ -29,7 +38,8 @@ A complete machine learning project to predict delivery delays in Brazilian e-co
 - 📈 Final model tuned with threshold adjustment and cross-validation
 
 **Tech used:** Python, Pandas, Scikit-learn, XGBoost, SHAP, Seaborn, Matplotlib  
-**[🔗 View Project]https://github.com/rickaof/Portfolio/tree/main/Ecommerce_Analysis**
+**Original folder path:** [`/Ecommerce_Analysis`](./Ecommerce_Analysis)  
+**Latest version:** [https://github.com/rickaof/Olist_Ecommerce_Analysis](https://github.com/rickaof/Olist_Ecommerce_Analysis)
 
 ---
 
@@ -63,4 +73,3 @@ If you're hiring or want to collaborate, feel free to connect!
 📧 Email: [rick.a.o.f@gmail.com](mailto:rick.a.o.f@gmail.com)
 
 Thanks for visiting! ⭐
----
