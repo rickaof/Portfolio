@@ -62,7 +62,8 @@ An automated ETL pipeline that collects, transforms, and stores daily currency e
 - ### 📉 Credit Default Risk – LendingClub Dataset
 
 A real-world dataset from LendingClub to build a data pipeline for detecting and analyzing borrower default risk.
-🔗 [Inadimplencia_LendidngClub — New Repository](https://github.com/rickaof/inadimplencia_lendingclub)
+
+🔗 [Inadimplencia_LendidngClub](https://github.com/rickaof/inadimplencia_lendingclub)
 
 ---
 
