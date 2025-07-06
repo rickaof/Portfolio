@@ -1,7 +1,0 @@
-# data
-/venv
-/data/raw
-
-# Parquet logs
-**/_SUCCESS
-**/.crc
